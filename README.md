@@ -17,6 +17,27 @@ JavaNano是专门为资源受限系统（如Android）设计的特殊代码生�
 
 ### 使用简介
 
+添加依赖
+
+* Maven
+
+```gr
+<dependency>
+  <groupId>com.sunnyxibei</groupId>
+  <artifactId>converter-protobuf-javanano</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
+* gradle
+
+```gr
+compile 'com.sunnyxibei:converter-protobuf-javanano:1.0.0'
+```
+
+* 代码中使用和所有工厂类的使用一样简单
+
 ```java
  Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -26,4 +47,3 @@ JavaNano是专门为资源受限系统（如Android）设计的特殊代码生�
                 .build();
 ```
 
-和所有工厂类的使用一样简单。
