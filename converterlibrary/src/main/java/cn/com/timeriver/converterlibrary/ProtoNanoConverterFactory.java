@@ -13,7 +13,6 @@ import retrofit2.Retrofit;
 /**
  * Created by xibeisunny on 2018/1/2.
  * Protocol Buffer javanano 转换工厂
- * 仅支持AI 训练计划的 protobuf request&response
  */
 
 public class ProtoNanoConverterFactory<T extends MessageNano> extends Converter.Factory {

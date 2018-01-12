@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.google.protobuf'
-apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 26
 
@@ -34,14 +33,4 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.google.protobuf.nano:protobuf-javanano:3.1.0'
-}
-
-//添加
-publish {
-    userOrg = 'sunnyxibei'
-    groupId = 'com.sunnyxibei'
-    artifactId = 'converter-protobuf-javanano'
-    publishVersion = '1.0.0'
-    desc = 'A Converter Factory for Protocol Buffer javanano'
-    website = 'http://timeriver.com.cn'
 }
