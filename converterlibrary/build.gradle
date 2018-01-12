@@ -56,7 +56,7 @@ publish {
     userOrg = 'sunnyxibei'
     groupId = 'com.sunnyxibei'
     artifactId = 'converter-protobuf-javanano'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'A Converter Factory for Protocol Buffer javanano'
     website = 'https://github.com/sunnyxibei/ProtoNanoConverterFactory'
 }

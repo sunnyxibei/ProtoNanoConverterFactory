@@ -25,7 +25,7 @@ JavaNano是专门为资源受限系统（如Android）设计的特殊代码生�
 <dependency>
   <groupId>com.sunnyxibei</groupId>
   <artifactId>converter-protobuf-javanano</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -33,7 +33,7 @@ JavaNano是专门为资源受限系统（如Android）设计的特殊代码生�
 * gradle
 
 ```gr
-compile 'com.sunnyxibei:converter-protobuf-javanano:1.0.0'
+compile 'com.sunnyxibei:converter-protobuf-javanano:1.0.1'
 ```
 
 * 代码中使用和所有工厂类的使用一样简单
