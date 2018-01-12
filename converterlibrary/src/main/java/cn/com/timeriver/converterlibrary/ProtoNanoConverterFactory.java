@@ -1,5 +1,7 @@
 package cn.com.timeriver.converterlibrary;
 
+import android.support.annotation.Nullable;
+
 import com.google.protobuf.nano.MessageNano;
 
 import java.lang.annotation.Annotation;
@@ -21,6 +23,7 @@ public class ProtoNanoConverterFactory<T extends MessageNano> extends Converter.
         return new ProtoNanoConverterFactory<>();
     }
 
+    @Nullable
     @Override
     public Converter<ResponseBody, T> responseBodyConverter(Type type, Annotation[] annotations, Retrofit retrofit) {
         if (!(type instanceof Class<?>)) {
@@ -30,16 +33,7 @@ public class ProtoNanoConverterFactory<T extends MessageNano> extends Converter.
         if (!MessageNano.class.isAssignableFrom(c)) {
             return null;
         }
-        T msg = null;
-        try {
-            //noinspection unchecked
-            msg = (T) c.newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return new ProtoNanoResponseBodyConverter<>(msg);
+        return new ProtoNanoResponseBodyConverter<>(c);
     }
 
     @Override

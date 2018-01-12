@@ -16,14 +16,24 @@ import retrofit2.Converter;
 final class ProtoNanoResponseBodyConverter<T extends MessageNano>
         implements Converter<ResponseBody, T> {
 
-    private T msg;
+    private Class<?> c;
 
-    public ProtoNanoResponseBodyConverter(T msg) {
-        this.msg = msg;
+    public ProtoNanoResponseBodyConverter(Class<?> c) {
+        this.c = c;
     }
 
     @Override
     public T convert(@NonNull ResponseBody value) throws IOException {
+        T msg = null;
+        try {
+            //noinspection unchecked
+            msg = (T) c.newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        assert msg != null;
         return T.mergeFrom(msg, value.bytes());
     }
 }
